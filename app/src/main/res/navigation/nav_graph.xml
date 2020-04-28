@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/indonesiaFragment">
+
+    <fragment
+        android:id="@+id/indonesiaFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.indonesia.IndonesiaFragment"
+        android:label="indonesia_fragment"
+        tools:layout="@layout/indonesia_fragment" />
+    <fragment
+        android:id="@+id/globalFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.global.GlobalFragment"
+        android:label="global_fragment"
+        tools:layout="@layout/global_fragment" />
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.information.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information" />
+</navigation>

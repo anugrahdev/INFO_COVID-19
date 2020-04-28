@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/indonesiaFragment"
+        android:icon="@drawable/ic_pin"
+        android:title="Indonesia"/>
+    <item
+        android:id="@+id/globalFragment"
+        android:icon="@drawable/ic_worldwide"
+        android:title="Global"/>
+
+    <item
+        android:id="@+id/informationFragment"
+        android:icon="@drawable/ic_info"
+        android:title="Information"/>
+</menu>

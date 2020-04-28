@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MVVM_COVID-19</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="masker_description">Sejak dimulainya wabah virus corona \n beberapa tempat telah mewajibkan\n kita untuk menggunakan masker, \n untuk mencegah penyebaran virus.</string>
+    <string name="rajin_cuci_tangan">Rajin Cuci Tangan</string>
+    <string name="cuci_tangan_description">Selain tertular karena menghirup droplet ketika berada dekat dengan orang yang terinfeksi, Anda juga bisa tertular virus corona lewat tangan sebagai media penularan.</string>
+</resources>

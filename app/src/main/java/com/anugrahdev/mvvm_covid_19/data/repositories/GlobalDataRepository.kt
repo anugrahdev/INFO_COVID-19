@@ -25,7 +25,7 @@ class GlobalDataRepository (private val api:ApiServiceKC,
     private val  globaldata = MutableLiveData<List<GlobalDataItem>>()
 
     init {
-        // Live data akan di save ke dalam lokal database
+        // save data to local database
         globaldata.observeForever {
             saveGlobalData(it)
         }

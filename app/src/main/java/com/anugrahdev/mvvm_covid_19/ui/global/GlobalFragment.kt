@@ -66,6 +66,8 @@ class GlobalFragment : Fragment(), KodeinAware {
     }
 
     private fun loadData(binding:GlobalFragmentBinding){
+        js=0;jp=0;jm=0
+        country = arrayOf<String>("Seluruh Dunia")
         Coroutines.main {
             viewModel.globaldata.await().observe(viewLifecycleOwner, Observer {
                 binding.progressBar?.hide()

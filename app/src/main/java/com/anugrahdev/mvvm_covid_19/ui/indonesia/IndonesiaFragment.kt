@@ -67,6 +67,7 @@ class IndonesiaFragment : Fragment(),KodeinAware {
     }
 
     private fun loadData(binding: IndonesiaFragmentBinding){
+        province = arrayOf<String>("Seluruh Indonesia")
         Coroutines.main{
             viewModel.indosum.await().observe(viewLifecycleOwner, Observer {
                 jp =  it?.positif.toString()!!

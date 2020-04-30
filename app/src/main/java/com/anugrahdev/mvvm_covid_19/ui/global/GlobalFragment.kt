@@ -1,6 +1,7 @@
 package com.anugrahdev.mvvm_covid_19.ui.global
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,7 @@ class GlobalFragment : Fragment(), KodeinAware {
     override val kodein by kodein()
     private val factory: GlobalViewModelFactory by instance()
     var country = arrayOf<String>("Seluruh Dunia")
+    var js:Int =0; var jp:Int=0; var jm:Int=0
 
     companion object {
         fun newInstance() = GlobalFragment()
@@ -42,7 +44,28 @@ class GlobalFragment : Fragment(), KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(GlobalViewModel::class.java)
 
         binding.progressBar?.show()
-        var js:Int =0; var jp:Int=0; var jm:Int=0
+        loadData(binding)
+
+        binding.layoutSwipe.setOnRefreshListener {
+            // Handler untuk menjalankan jeda selama 5 detik
+            Handler().postDelayed({
+                // Berhenti berputar/refreshing
+                binding.layoutSwipe.setRefreshing(false)
+                // fungsi-fungsi lain yang dijalankan saat refresh berhenti
+                loadData(binding)
+            }, 5000)
+        }
+
+        binding.btnInfoPenting.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_globalFragment_to_globalCountryListFragment)
+        }
+
+
+
+        return binding.root
+    }
+
+    private fun loadData(binding:GlobalFragmentBinding){
         Coroutines.main {
             viewModel.globaldata.await().observe(viewLifecycleOwner, Observer {
                 binding.progressBar?.hide()
@@ -56,8 +79,8 @@ class GlobalFragment : Fragment(), KodeinAware {
                     context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, country) }
 
                 arrayAdapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+                binding.spinner.setTitle("Pilih Negara")
                 binding.spinner?.adapter = arrayAdapter
-
                 binding.spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                     override fun onNothingSelected(parent: AdapterView<*>?) {}
                     override fun onItemSelected(
@@ -81,13 +104,6 @@ class GlobalFragment : Fragment(), KodeinAware {
             })
         }
 
-        binding.btnInfoPenting.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_globalFragment_to_globalCountryListFragment)
-        }
-
-
-
-        return binding.root
     }
 
     override fun onResume() {

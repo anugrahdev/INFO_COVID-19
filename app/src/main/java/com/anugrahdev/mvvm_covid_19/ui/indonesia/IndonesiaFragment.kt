@@ -1,12 +1,14 @@
 package com.anugrahdev.mvvm_covid_19.ui.indonesia
 
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -44,6 +46,27 @@ class IndonesiaFragment : Fragment(),KodeinAware {
         viewModel = ViewModelProviders.of(this, factory).get(IndonesiaViewModel::class.java)
         //Proses Penampilan Data
         binding.progressBar?.show()
+
+        loadData(binding)
+        binding.layoutSwipe.setOnRefreshListener {
+            // Handler untuk menjalankan jeda selama 5 detik
+            Handler().postDelayed({
+                // Berhenti berputar/refreshing
+                binding.layoutSwipe.setRefreshing(false)
+                // fungsi-fungsi lain yang dijalankan saat refresh berhenti
+                loadData(binding)
+            }, 5000)
+        }
+
+
+        binding.btnIndonesiaList.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.showIndonesiaList)
+        }
+
+        return binding.root
+    }
+
+    private fun loadData(binding: IndonesiaFragmentBinding){
         Coroutines.main{
             viewModel.indosum.await().observe(viewLifecycleOwner, Observer {
                 jp =  it?.positif.toString()!!
@@ -59,8 +82,8 @@ class IndonesiaFragment : Fragment(),KodeinAware {
                     context?.let { ArrayAdapter(it, android.R.layout.simple_spinner_dropdown_item, province) }
 
                 arrayAdapter?.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+                binding.spinner.setTitle("Pilih Provinsi")
                 binding.spinner?.adapter = arrayAdapter
-
                 binding.spinner?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                     override fun onNothingSelected(parent: AdapterView<*>?) {}
                     override fun onItemSelected(
@@ -84,15 +107,6 @@ class IndonesiaFragment : Fragment(),KodeinAware {
 
             })
         }
-
-        binding.btnIndonesiaList.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.showIndonesiaList)
-        }
-
-
-
-
-        return binding.root
     }
 
     override fun onResume() {

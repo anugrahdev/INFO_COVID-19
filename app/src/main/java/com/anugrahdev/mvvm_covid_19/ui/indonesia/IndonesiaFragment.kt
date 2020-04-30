@@ -1,26 +1,26 @@
 package com.anugrahdev.mvvm_covid_19.ui.indonesia
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import com.anugrahdev.mvvm_covid_19.R
 import com.anugrahdev.mvvm_covid_19.databinding.IndonesiaFragmentBinding
-import com.anugrahdev.mvvm_covid_19.ui.global.GlobalViewModel
 import com.anugrahdev.mvvm_covid_19.utils.hide
 import com.anugrahdev.mvvm_covid_19.utils.show
 import com.anugrahdev.mvvmsampleapp.utils.Coroutines
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
+
 
 class IndonesiaFragment : Fragment(),KodeinAware {
 
@@ -85,7 +85,24 @@ class IndonesiaFragment : Fragment(),KodeinAware {
             })
         }
 
+        binding.btnIndonesiaList.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.showIndonesiaList)
+        }
+
+
+
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
     }
 
 

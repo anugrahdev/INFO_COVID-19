@@ -2,11 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <!--    <data>-->
-    <!--        <variable-->
-    <!--            name="globaldata"-->
-    <!--            type="com.anugrahdev.mvvm_covid_19.data.db.entities.IndonesiaData" />-->
-    <!--    </data>-->
+        <data>
+            <variable
+                name="viewmodel"
+                type="com.anugrahdev.mvvm_covid_19.ui.information.InformationViewModel" />
+        </data>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="28dp"
-                    android:layout_marginTop="68dp"
+                    android:layout_marginTop="30dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/ic_remote_work_man"
                     app:layout_constraintStart_toStartOf="parent"
@@ -56,9 +56,10 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.821"
+                    app:layout_constraintHorizontal_bias="0.828"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.392" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -66,7 +67,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="208dp"
+                android:layout_marginTop="170dp"
                 android:background="@drawable/bg_layout_white"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,11 +77,13 @@
 
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/layout_covid"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:layout_marginTop="28dp"
                     android:background="#fff"
+                    android:onClick="@{viewmodel::onClickInfo}"
                     app:cardCornerRadius="20dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -116,7 +119,7 @@
                             app:layout_constraintVertical_bias="0.594" />
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/iv_forward"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_gravity="end|center_vertical"
@@ -172,7 +175,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Headache"
+                            android:text="Sakit Kepala"
                             android:fontFamily="@font/poppinsmed"
                             android:layout_gravity="center"/>
                     </LinearLayout>
@@ -196,7 +199,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cough"
+                            android:text="Batuk"
                             android:fontFamily="@font/poppinsmed"
                             android:layout_gravity="center"/>
 
@@ -221,7 +224,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Fever"
+                            android:text="Demam"
                             android:fontFamily="@font/poppinsmed"
                             android:layout_gravity="center"/>
 

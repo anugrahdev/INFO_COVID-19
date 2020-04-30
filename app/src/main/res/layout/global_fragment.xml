@@ -26,6 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
@@ -38,11 +39,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
-
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/ic_doctor_woman"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,7 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="16dp"
 
                 android:src="@drawable/ic_doctor_man"
@@ -63,8 +63,8 @@
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:layout_marginTop="208dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
                 android:background="@drawable/bg_layout_white"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,13 +82,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppinsbold"
-                        android:text="Case Update"
+                        android:text="Update Kasus"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Latest update till today"
+                        android:text="Perkembangan terbaru"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -251,7 +251,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppinsbold"
-                        android:text="Spread of Virus"
+                        android:text="Persebaran Virus"
                         android:textSize="18sp" />
 
                 </LinearLayout>

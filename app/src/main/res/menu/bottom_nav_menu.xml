@@ -12,5 +12,5 @@
     <item
         android:id="@+id/informationFragment"
         android:icon="@drawable/ic_info"
-        android:title="Information"/>
+        android:title="Informasi"/>
 </menu>

@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.temporal.ChronoUnit
 
-private val MINIMUM_REFRESH_INTERVAL = 6
+private val MINIMUM_REFRESH_INTERVAL = 3
 
 class GlobalDataRepository (private val api:ApiServiceKC,
                             private val db:AppDatabase,

@@ -1,6 +1,5 @@
 package com.anugrahdev.mvvm_covid_19.data.repositories
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.anugrahdev.mvvm_covid_19.data.db.AppDatabase
@@ -9,7 +8,6 @@ import com.anugrahdev.mvvm_covid_19.data.db.entities.indodatasum.IndoDataSum
 import com.anugrahdev.mvvm_covid_19.data.network.ApiServiceKC
 import com.anugrahdev.mvvm_covid_19.data.network.SafeApiRequest
 import com.anugrahdev.mvvm_covid_19.data.preferences.PreferenceProvider
-import com.anugrahdev.mvvm_covid_19.ui.indonesia.IndoDataListener
 import com.anugrahdev.mvvm_covid_19.utils.NoInternetException
 import com.anugrahdev.mvvmsampleapp.utils.Coroutines
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +15,7 @@ import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.temporal.ChronoUnit
 
-private val MINIMUM_REFRESH_INTERVAL = 6
+private val MINIMUM_REFRESH_INTERVAL = 3
 class IndoDataRepository (
     private val api: ApiServiceKC,
     private val db: AppDatabase,

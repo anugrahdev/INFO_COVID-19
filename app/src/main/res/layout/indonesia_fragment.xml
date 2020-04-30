@@ -51,7 +51,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="0dp"
                     android:src="@drawable/doctor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="208dp"
+                android:layout_marginTop="170dp"
                 android:background="@drawable/bg_layout_white"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -81,13 +81,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppinsbold"
-                        android:text="Case Update"
+                        android:text="Update Kasus"
                         android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Latest update till today"
+                        android:text="Perkembangan terbaru"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -252,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppinsbold"
-                        android:text="Spread of Virus"
+                        android:text="Persebaran Virus"
                         android:textSize="18sp" />
 
                 </LinearLayout>
@@ -283,7 +283,7 @@
                             android:background="@color/colorTransparenSoftWhite" />
 
                         <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/btn_info_penting"
+                            android:id="@+id/btn_indonesia_list"
                             android:background="@drawable/bg_map"
                             android:text="Lihat Detail"
                             android:textAllCaps="false"

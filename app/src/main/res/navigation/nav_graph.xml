@@ -9,15 +9,40 @@
         android:id="@+id/indonesiaFragment"
         android:name="com.anugrahdev.mvvm_covid_19.ui.indonesia.IndonesiaFragment"
         android:label="indonesia_fragment"
-        tools:layout="@layout/indonesia_fragment" />
+        tools:layout="@layout/indonesia_fragment" >
+        <action
+            android:id="@+id/showIndonesiaList"
+            app:destination="@id/indonesiaListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/globalFragment"
         android:name="com.anugrahdev.mvvm_covid_19.ui.global.GlobalFragment"
         android:label="global_fragment"
-        tools:layout="@layout/global_fragment" />
+        tools:layout="@layout/global_fragment" >
+        <action
+            android:id="@+id/action_globalFragment_to_globalCountryListFragment"
+            app:destination="@id/globalCountryListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/informationFragment"
         android:name="com.anugrahdev.mvvm_covid_19.ui.information.InformationFragment"
         android:label="fragment_information"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_information" >
+        <action
+            android:id="@+id/action_informationFragment_to_covidFragment"
+            app:destination="@id/covidFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/indonesiaListFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.indonesia.IndonesiaListFragment"
+        android:label="IndonesiaListFragment" />
+    <fragment
+        android:id="@+id/globalCountryListFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.global.GlobalCountryListFragment"
+        android:label="GlobalCountryListFragment" />
+    <fragment
+        android:id="@+id/covidFragment"
+        android:name="com.anugrahdev.mvvm_covid_19.ui.information.CovidFragment"
+        android:label="fragment_covid"
+        tools:layout="@layout/fragment_covid" />
 </navigation>
